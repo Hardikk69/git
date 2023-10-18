@@ -1,0 +1,65 @@
+//WAP overload the operation for sorting of 10 int number
+
+
+#include<iostream.h>
+#include<conio.h>
+
+class overload
+{
+	private:
+		int arr[10];
+	public:
+		friend istream & operator>>(istream &is,overload &ol);
+		friend ostream & operator<<(ostream &os,overload &ol);
+		friend sort(demo &obj);
+};
+
+istream & operator>>(istream &is,overload &ol)
+{
+	int i;
+	for(i=0;i<10;i++)
+		{
+			is>>obj.arr[i];
+		}
+	return is;
+}
+
+
+istream & operator<<(istream &os,overload &ol)
+{
+	int i;
+	for(i=0;i<10;i++)
+		{
+			os<<obj.arr[i];
+		}
+	return os;
+}
+
+
+void sort(overload &ol)
+{
+	int i,j;
+	for(i=0;i<10;i++)
+	{
+		for(j=i+1;j<10;j++)
+		{
+			if(obj.arr[i]>obj.arr[j])
+			{
+				obj.arr[i]=obj.arr[i]+obj.arr[j];
+				obj.arr[j]=obj.arr[i]-obj.arr[j];
+				obj.arr[i]=obj.arr[i]+obj.arr[j];
+			}
+		}
+	}
+}
+
+void main()
+{
+	clrscr();
+	overload ol;
+	cin>>ol;
+	sort(overload);
+	cout<<ol;
+	getch();
+
+}
